@@ -12,6 +12,7 @@ import { StarterKit } from "@tiptap/starter-kit";
 import { Button } from "@/components/ui/button";
 
 import { MessageCircle } from "lucide-react";
+import { EditorFooter } from "./EditorFooter";
 
 const EDITOR_ID = "email-composer-velt-demo";
 
@@ -75,6 +76,8 @@ const EmailEditor = ({ content = `<p>Data for custom</p>` }: { content?: string 
       <div className="editor-content-container bg-gray-50 dark:bg-black/80 p-4 rounded-lg border border-white/10 dark:border-white/10 min-h-[300px] focus-within:border-blue-500 focus-within:ring-1 focus-within:ring-blue-500">
         <EditorContent editor={editor} />
       </div>
+      <EditorFooter />
+
 
     </div >
   );

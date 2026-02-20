@@ -22,6 +22,7 @@ import {
 import EmailEditor from "@/components/EmailEditor";
 import initialContent from "@/constant/general";
 
+
 export function EmailComposer() {
   const [showCC, setShowCC] = useState(false);
   const [showBCC, setShowBCC] = useState(false);
@@ -123,13 +124,14 @@ export function EmailComposer() {
               />
             </div>
           </div>
-
           <Separator />
+
 
           {/* Rich Text Editor */}
           <div className="space-y-2">
             <Label className="text-sm font-medium">Message</Label>
             <EmailEditor content={initialContent} />
+
           </div>
 
           {/* Attachment and Actions */}

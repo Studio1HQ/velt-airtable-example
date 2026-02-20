@@ -1,154 +1,149 @@
-# Velt Email Composer Airtable (Next.js)
+# MailCraft - Professional Email Composer
 
-A collaborative email composer built with Next.js, React, Tailwind CSS, and [Velt](https://velt.dev), demonstrating real-time commenting and multi-user collaboration for modern SaaS applications.
+A beautiful, modern email composer built with Tiptap, Velt, Next.js, and shadcn/ui. Features rich-text editing, real-time collaboration with inline commenting, and a premium glassmorphic UI.
 
----
+![Next.js](https://img.shields.io/badge/Next.js-16.1.6-black)
+![React](https://img.shields.io/badge/React-19.2.4-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.3-blue)
+![Tiptap](https://img.shields.io/badge/Tiptap-2.8-purple)
+![Velt](https://img.shields.io/badge/Velt-5.0.0--beta-green)
+![License](https://img.shields.io/badge/license-MIT-green)
 
 ## Features
 
-- ✉️ **Email Composer**: Compose, edit, and format emails with a rich text editor (Tiptap).
-- 🧑🤝🧑 **Multi-User Support**: Switch between predefined users with avatars.
-- 💬 **Real-Time Comments**: Add and view collaborative comments using Velt.
-- 🌓 **Dark/Light Theme**: Toggle between dark and light modes.
-- 📊 **Sidebar & Metrics**: Sidebar for navigation and info cards for journey/metrics.
-- 🔔 **Notifications**: In-app notifications powered by Velt.
-- 🧩 **Reusable UI Components**: Built with shadcn/ui and Radix primitives.
+### Rich Text Editor
 
----
+- **Tiptap Powered** - Modern headless rich text editor framework
+- **Bubble Menu** - Floating toolbar appears on text selection for quick actions
+- **Advanced Formatting** - Support for headings, lists, bold, italic, and more
+- **tiptap-Style Integration** - Designed for seamless data management workflows
 
-## Tech Stack
+### Real-Time Collaboration (Velt)
 
-- **Framework**: [Next.js](https://nextjs.org/) (App Router)
-- **UI**: [React](https://react.dev/), [Tailwind CSS](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.com/)
-- **Editor**: [Tiptap](https://tiptap.dev/)
-- **Collaboration**: [Velt](https://velt.dev/)
-- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Other**: [Radix UI](https://www.radix-ui.com/), [TanStack React Query](https://tanstack.com/query/latest)
+- **Presence** - See who's currently viewing the email in real time
+- **Inline Comments** - Select text and add comments directly in the editor using Velt's Tiptap integration
+- **Notifications** - Real-time notification bell for new comments and replies
+- **Comments Sidebar** - Manage all discussions in a dedicated sidebar
+- **User Switching** - Easily switch between predefined users (Nany, Mary) to test collaboration
 
----
+### UI / UX
 
-## Prerequisites
+- **Dark / Light Mode** - Full support for both themes with smooth transitions
+- **Responsive Design** - Optimized for desktop and mobile devices
+- **shadcn/ui** - Highly accessible, beautiful UI components
 
-- **Node.js** (v16+ recommended)
-- **npm** (v8+ recommended)
+## Modern Tech Stack
 
----
+- **React 19** - Latest React features including updated hooks
+- **Next.js 16** - App Router architecture with server and client components
+- **TypeScript** - Fully type-safe development experience
+- **Tiptap** - Highly extensible rich text editor
+- **Velt SDK v5** - Cutting-edge collaboration tools including `@veltdev/tiptap-velt-comments`
+- **Tailwind CSS** - Modern utility-first styling
+- **Zustand** - Lightweight state management for user sessions
+- **Lucide React** - Minimalist icon library
 
 ## Getting Started
 
-1. Clone the repository
+### Prerequisites
 
-   ```bash
-   git clone https://github.com/Studio1HQ/Velt-Examples
-   ```
+- Node.js 18+
+- npm or yarn
+- Velt API Key (sign up at [velt.dev](https://velt.dev))
 
-2. Navigate to the project directory
+### Installation
 
-   ```bash
-   cd velt-email-composer-airtable
-   ```
+1. Clone the repository:
 
-3. Install dependencies:
+```bash
+git clone <repository-url>
+cd velt-email-composer-tiptap
+```
 
-   ```bash
-   npm install
-   ```
+2. Install dependencies:
 
-4. Create a `.env.local` file with your Velt API key:
+```bash
+npm install
+```
 
-   ```
-   NEXT_PUBLIC_VELT_ID=your_api_key_here
-   ```
+3. Set up environment variables:
 
-   > Note: You can get your API key from the [Velt Dashboard](https://app.velt.dev)
+```bash
+# Create .env file
+echo "NEXT_PUBLIC_VELT_ID=your_velt_api_key_here" > .env
+```
 
-5. Run the development server:
+4. Start the development server:
 
-   ```bash
-   npm run dev
-   ```
+```bash
+npm run dev
+```
 
-6. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## Project Structure
 
 ```
-.
-├── app/                 # Next.js app directory
-├── components/          # React components
-│   └── ui/              # UI components
-├── constant/            # Constants (e.g. Email content)
-├── helper/              # Users DB and helper functions
-├── hooks/               # Custom hooks
-├── lib/                 # Utility functions and types
-├── public/              # Static assets
-└── package.json         # Project dependencies
+├── app/
+│   ├── (app)/                    # Main application routes
+│   │   ├── layout.tsx            # Velt + Theme providers
+│   │   └── page.tsx              # Email composer page
+│   ├── layout.tsx                # Root layout (HTML, Fonts)
+│   └── globals.css               # Global styles and Tailwind
+├── components/
+│   ├── ui/                       # shadcn/ui components
+│   ├── EmailEditor.tsx           # Tiptap editor with Velt integration
+│   ├── EditorFooter.tsx          # Editor footer with formatting options
+│   ├── email-composer.tsx        # Main composer layout
+│   └── navbar.tsx                # Navigation with Velt tools
+├── constant/
+│   └── general.ts                # Initial editor content
+├── helper/
+│   └── userdb.ts                 # User management and state
+├── lib/
+│   └── utils.ts                  # Tailwind class merging utility
+├── public/                       # Static assets
+└── package.json                  # Dependencies and scripts
 ```
 
 ## Velt Integration
 
-This project uses Velt SDK for real-time collaboration features:
+This project uses the Velt SDK to add collaborative features.
 
-### Core Features
+### Tiptap Velt Comments
 
-- User presence and cursor tracking
-- Comments and annotations
-- Notifications
-- Real-time updates
+The editor integrates `@veltdev/tiptap-velt-comments` for inline discussions:
 
-### Velt Components Used
+```tsx
+import {
+  TiptapVeltComments,
+  renderComments,
+  addComment,
+} from "@veltdev/tiptap-velt-comments";
 
-- `VeltProvider`: Main provider component for Velt integration
-- `VeltComments`: Inline commenting system
-- `VeltNotificationsTool`: Notification system
-- `VeltCommentsSidebar`: Comments management sidebar
+// Configure extension
+TiptapVeltComments.configure({ persistVeltMarks: false });
 
-### Configuration
+// Render existing comments
+renderComments({ editor, editorId, commentAnnotations });
 
-The application uses the following Velt configurations:
+// Add new comment
+addComment({ editor, editorId });
+```
 
-- Document ID: "email-composer-document"
-- User authentication with predefined users
-- Custom comment bubble styling
-- Dark/Light mode support
+### Components Used
 
-## Troubleshooting
+| Component               | Purpose                 |
+| ----------------------- | ----------------------- |
+| `VeltProvider`          | Main SDK initialization |
+| `VeltPresence`          | Real-time user avatars  |
+| `VeltNotificationsTool` | Notification bell       |
+| `VeltSidebarButton`     | Toggle for comments     |
+| `VeltCommentsSidebar`   | Discussion panel        |
 
-### Common Issues
+## 📚 Resources
 
-1. **Velt API Key Issues**
-   - Ensure your API key is correctly set in `.env.local`
-   - Verify the key is active in your Velt Dashboard
-
-2. **Collaboration Features Not Working**
-   - Check browser console for errors
-   - Verify network connectivity
-   - Ensure you're using a supported browser
-
-3. **Build Issues**
-   - Clear `.next` directory and node_modules
-   - Run `npm install` again
-   - Check Node.js version compatibility
-
-## Documentation
-
-### Velt Resources
-
-- [Velt Documentation](https://docs.velt.dev/getting-started/introduction)
-- [Velt API Reference](https://docs.velt.dev/api-reference)
-- [Velt Dashboard](https://app.velt.dev)
-- [Velt GitHub](https://github.com/veltdev)
-
-### UI Components
-
-- [Shadcn UI Documentation](https://ui.shadcn.com/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-
-## Contributing
-
-Feel free to submit issues and enhancement requests. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+- [Velt Documentation](https://docs.velt.dev)
+- [Tiptap Guide](https://tiptap.dev/docs)
+- [shadcn/ui](https://ui.shadcn.com)
