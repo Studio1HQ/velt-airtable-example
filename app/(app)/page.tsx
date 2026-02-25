@@ -1,8 +1,13 @@
+"use client";
 import { EmailComposer } from "@/components/email-composer";
 import { Navbar } from "@/components/navbar";
+import useTheme from "@/hooks/use-theme";
+import { VeltComments } from "@veltdev/react";
 import React from "react";
 
 const Home = () => {
+  const { theme } = useTheme();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-muted/20">
       <Navbar />
@@ -19,6 +24,8 @@ const Home = () => {
           </div>
         </div>
         <EmailComposer />
+        <VeltComments darkMode={theme === "dark"} textMode={false} />
+
       </main>
     </div>
   );
